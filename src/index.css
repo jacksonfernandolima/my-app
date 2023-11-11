@@ -19,9 +19,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.cards {
-display: flex;
-gap:5px;
-flex-wrap: wrap;
-justify-content: center;
+/*formatação barra de rolagem*/
+ body::-webkit-scrollbar {
+  width: 12px;           /*largura barra de rolagem*/
+  background-color: #222;
+ }
+body::-webkit-scrollbar-track { 
+  background: #222;        /*cor de fundo barra */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #b71c1c;   /*cor do scroll*/
+  border-radius: 20px;            
+  border: 3px solid #222;
 }
