@@ -11,7 +11,7 @@ export const categories = [
     return videos.filter( video => video.category === categories[id])
   }
 
-function Category({ category,children }) {
+function Category({ category, children }) {
     return (
         <section className={styles.category}>
           <h2>{category}</h2>

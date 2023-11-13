@@ -1,6 +1,7 @@
 import styles from "./SearchVideoList.module.css";
 import VideoList from "../../components/VideoList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Loader from "../Loader";
 
 // filtrando videos por categoria ou titulo
 function filterVideos(videos, searchText) {
@@ -10,22 +11,32 @@ function filterVideos(videos, searchText) {
 
 function SearchVideoList({ videos }) {
 
-    const [ searchText, setSearchText ] = useState('Lançamentos')
+    const [searchText, setSearchText] = useState('Lançamentos')
     const foundVideos = filterVideos(videos, searchText)
+
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 1000)
+
+    }, [])
 
 
     return (
         <section className={styles.container}>
             <input
-               type="search"
-               placeholder="pesquisar..." 
-               value={searchText}
-               onChange={event => setSearchText(event.target.value)}
+                type="search"
+                placeholder="pesquisar..."
+
+                value={searchText}
+                onChange={e => setSearchText(e.target.value)}
             />
-            <VideoList 
-            videos={foundVideos}
-            emptyHeading={`Sem vídeos sobre "${searchText}"`}
-             />
+            {
+                    loading ? <Loader /> :
+                    <VideoList
+                        videos={foundVideos}
+                        emptyHeading={`Sem vídeos sobre "${searchText}"`}
+                    />
+            }
 
         </section>
     );
