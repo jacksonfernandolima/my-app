@@ -16,15 +16,47 @@
     font-size: 2rem;
     color: #b71c1c;
     font-weight: 500;
+    
 }
 
 .header a {
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.839);
     padding-inline: 1rem;
     font-size: 18px;
-
+    
 }
+
+.header nav {
+    background-color: #b71c1cd1;
+    padding: 1px 1px;
+    margin-block: 1px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    
+}
+
+.header nav:hover {
+    cursor: pointer;
+    background-color: #000000;
+    transform: scale(1.10);
+    box-shadow: 0 0 10px grey;
+}
+
 @media (max-width: 480px) {
-    .header span }}}}}}}}}}}}]
+    .header span {
+        font-size: 1.5rem; 
+    }
+    .header a {
+        font-size: 0.75rem;
+        padding-inline: 0.5rem;
+    }
+}
+
+@media (max-width : 380px) {
+    .header span {
+        font-size: 1.5rem;
+    }
+    .header a { font-size: 0.65rem;}
 }
