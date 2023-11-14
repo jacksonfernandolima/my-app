@@ -49,7 +49,7 @@
         font-size: 1.5rem; 
     }
     .header a {
-        font-size: 0.75rem;
+        font-size: 0.95rem;
         padding-inline: 0.5rem;
     }
 }
@@ -58,5 +58,5 @@
     .header span {
         font-size: 1.5rem;
     }
-    .header a { font-size: 0.65rem;}
+    .header a { font-size: 0.75rem;}
 }
